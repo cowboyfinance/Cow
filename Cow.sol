@@ -106,7 +106,7 @@ contract Cow is Ownable {
     event LogBreed(uint256 indexed period, uint256 candidatesLength, uint256 estimatedBreeders, uint256 breededToken, uint256 availableUnits);
 
     // public constants
-    string public constant name = "Cow";
+    string public constant name = "Cowboy.Finance";
     string public constant symbol = "COW";
     uint256 public constant decimals = 9;
 
