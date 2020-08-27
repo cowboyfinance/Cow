@@ -87,7 +87,7 @@ contract Cow is Ownable {
     using SafeMath for uint256;
 
     modifier validRecipient(address account) {
-        require(account != address(0x0));
+        //require(account != address(0x0));
         require(account != address(this));
         _;
     }
@@ -224,6 +224,9 @@ contract Cow is Ownable {
         uint256 candidatesLength = 0;
         for (uint256 i = 0; i < _addressesLength; i++) {
             address addr = _addresses[i];
+            if(addr == address(0x0)) {
+                continue;
+            }
             uint256 snapbalance = getSnapshotBalance(addr);
             // dont put it on the list if too low
             if (snapbalance < BREED_MIN_BALANCE.mul(_unitsPerToken)) {
